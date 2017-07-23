@@ -1,0 +1,10 @@
+package graficos;
+
+public class hojaSprites {
+	public final int[] pixeles;
+	
+	public hojaSprites(final String ruta, final String ancho, final Strin alto){
+		
+		
+	}
+}

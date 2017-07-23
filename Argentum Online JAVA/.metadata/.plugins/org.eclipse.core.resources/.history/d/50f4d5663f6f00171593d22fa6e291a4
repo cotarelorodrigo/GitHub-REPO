@@ -1,4 +1,4 @@
-package juego;
+package Juego;
 
 import java.awt.BorderLayout;
 import java.awt.Canvas;
