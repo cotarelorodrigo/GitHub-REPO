@@ -6,7 +6,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class HojaSprites {
-	//Una hoja de sprites es una imagen con los movimientos de cada grafico, googlear para mas info
+	//Una hoja de sprites es una imagen con los movimientos de cada grafico, donde cada movimiento es un sprite, googlear para mas info
 	private final int ancho;
 	private final int alto;
 	public final int[] pixeles;
@@ -26,7 +26,10 @@ public class HojaSprites {
 			e.printStackTrace();
 		}
 		
-		
-		
 	}
+	
+	public int obtenAncho() {
+		return ancho;
+	}
+	
 }
