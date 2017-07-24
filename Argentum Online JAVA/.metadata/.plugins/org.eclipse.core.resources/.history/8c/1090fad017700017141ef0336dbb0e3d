@@ -6,8 +6,6 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
-import control.Teclado;
-
 public class Juego extends Canvas implements Runnable {
 
 	private static final long serialVersionUID = 1L;
@@ -24,14 +22,10 @@ public class Juego extends Canvas implements Runnable {
 
 	private static JFrame ventana;
 	private static Thread thread;
-	private static Teclado teclado;
 
 	private Juego() {
 		setPreferredSize(new Dimension(ANCHO, ALTO));
 
-		teclado = new Teclado();
-		addKeyListener(teclado); //Esto le dice a Java que detecte las teclas que se pulsen dentro de esta clase. Que detecte todo lo que se pulsa dentro del canvas
-		
 		ventana = new JFrame(NOMBRE);
 		ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ventana.setResizable(false);
@@ -65,21 +59,6 @@ public class Juego extends Canvas implements Runnable {
 	}
 	
 	private void actualizar(){
-		teclado.actualizar();
-		
-		if(teclado.arriba) {
-			System.out.println("arriba");
-		}
-		if(teclado.abajo) {
-			System.out.println("abajo");
-		}
-		if(teclado.izquierda) {
-			System.out.println("izquierda");
-		}
-		if(teclado.derecha) {
-			System.out.println("derecha");
-		}
-		
 		aps++;
 	}
 	
@@ -98,8 +77,6 @@ public class Juego extends Canvas implements Runnable {
 		
 		double tiempoTranscurrido;
 		double delta = 0;
-		
-		requestFocus(); //Pone en foco la pantalla del juego. Permite que se pueda usar el teclado en la ventana
 		
 		while(enFuncionamiento){
 			final long inicioBucle = System.nanoTime();
